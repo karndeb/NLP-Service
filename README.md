@@ -1,6 +1,6 @@
 # NLP As A Service
 
-![NLP As A Service Demo](https://github.com/karndeb/NLP-Service/blob/master/demo/animation.gif)
+![NLP As A Service Demo](https://github.com/karndeb/NLP-Service/blob/main/demo/Animation.gif)
 
 This project is a sample demo of NLP as a service platform built using FastAPI and Hugging Face.
 The use cases are related to chatbot automation services. 
