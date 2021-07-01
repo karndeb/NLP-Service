@@ -3,7 +3,7 @@
 ![NLP As A Service Demo](demo/animation.gif)
 
 This project is a sample demo of NLP as a service platform built using FastAPI and Hugging Face.
-The use cases are related to chatbot automation services
+The use cases are related to chatbot automation services. 
 
 
 ## Features
@@ -14,7 +14,7 @@ The use cases are related to chatbot automation services
 
 ## Requirement
 
-See requirements.txt.
+Please add *AWS_SECRET_ACCESS_KEY* and *AWS_ACCESS_KEY_ID* in the *helpers.py* file under app/library
 
 ## Installation & Usage
 
