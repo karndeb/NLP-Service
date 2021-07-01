@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Free Artist Tools by cecilieo.com">
+    <meta name="author" content="Shinichi Okada">
+    <link href="{{ url_for('static', path='/css/style3.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/css/mystyle.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/543c4560e5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>
+    </div>
+    <h2> Keya Chatbot </h2>
+    <div class="row">
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-10">
+            <center>
+                <h3>Query Expansion with Transformers</h3>
+            </center>
+
+        <div class="form-group col-md-2">
+            <label for="max_sentences" id="label_max_sentences">Top k sentences: 5</label>
+            <input type="range" class="custom-range" min="1" max="10" value="5" step="1" id="max_sentences">
+        </div>
+        </div>
+    </div>
+
+        <title>Upload an excel file</title>
+        <h1>Excel file upload</h1>
+        <form action="uploadfileqe/new/" method=post enctype=multipart/form-data>
+        <p><input type=file name=file><input type=submit value=Upload>
+        </form>
+
+        {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+        {% endfor %}
+
+        <form method="get" action="/uploadfileqe/new/download" enctype=multipart/form-data>
+        <a download href="{{creds}}">Download</a>
+        </form>
+</body>
+</html>

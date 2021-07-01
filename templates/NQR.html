@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Free Artist Tools by cecilieo.com">
+    <meta name="author" content="Karn Deb">
+    <link href="{{ url_for('static', path='/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/css/app.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/css/style3.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/css/mystyle.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', path='/js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/app.js') }}"></script>
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>
+    </div>
+    <center>
+        <h1> Keya Chatbot </h1>
+    </center>
+    <div class="row">
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-10">
+            <center>
+                <h2>Next Query Recommendation with Transformers</h2>
+            </center>
+
+        </div>
+    </div>
+
+        <title>Upload an excel file</title>
+        <h1>Excel file upload</h1>
+        <form action="/uploadfile/new/" method=post enctype=multipart/form-data>
+            <label for="max_sentences" id="label_max_sentences">Top k sentences: 5</label>
+            <input type="range" class="custom-range" min="1" max="10" value="5" step="1" name="max_sentences" id="max_sentences">
+        <p><input type=file name=file><input type=submit value=Upload>
+        </form>
+
+<!--        <form id="form" method="post" action="/uploadfile/new/" enctype="multipart/form-data">-->
+<!--        <input type="text" name="max_sentences" value=1 />-->
+<!--&lt;!&ndash;        <input type="text" name="middle" value="James" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="text" name="last" value="Smith" />&ndash;&gt;-->
+<!--        <input name="file" type="file" />-->
+<!--        <button type='button' id='submit_btn'>Submit</button>-->
+<!--        </form>-->
+
+        {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+        {% endfor %}
+
+        <form method="get" action="/uploadfile/new/download" enctype=multipart/form-data>
+        <a download href="{{creds}}">Download</a>
+        </form>
+</body>
+</html>
