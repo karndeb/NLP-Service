@@ -14,7 +14,7 @@ The use cases are related to chatbot automation services.
 
 ## Requirement
 
-Please add *AWS_SECRET_ACCESS_KEY* and *AWS_ACCESS_KEY_ID* in the *helpers.py* file under app/library
+Please add `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID` in the `helpers.py` file under app/library
 
 ## Installation & Usage
 
